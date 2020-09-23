@@ -26,9 +26,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.javafish.scrabble.GreetingController;
+import com.javafish.scrabble.controller.StartController;
 
-@WebMvcTest(controllers = GreetingController.class)
+@WebMvcTest(controllers = StartController.class)
 public class ServingWebContentApplicationTest {
 
 	@Autowired

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="base :: head"></head>
+    <body>
+    	<!-- Sidebar -->
+		<div class="w3-sidebar w3-bar-block" style="display:none" id="mySidebar">
+		  <button onclick="w3_close()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+		  <a href="/setLanguage?lang=en" class="w3-bar-item w3-button" th:text="#{common.language.english}"></a>
+		  <a href="/setLanguage?lang=de" class="w3-bar-item w3-button" th:text="#{common.language.german}"></a>
+		</div>
+		<div class="w3-teal">
+		  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()" th:text="#{common.symbols.currentFlag}"></button>
+		  <div class="w3-container">
+		  	<a href="/start">
+		    	<h1 th:text="#{common.applicationName}"></h1>
+		    </a>
+		  </div>
+		</div>
+    	 <div class="container">
+    	 	<form method="post" th:object="${newGame}" class="mt-5">
+    	 		<div class="form-group">
+    	 		
+    	 		</div>
+    	 		<button class="btn btn-primary" type="submit" th:text="#{common.button.newGame}"></button>
+    	 	</form>
+    	 </div>
+    	 <div class="container">
+	   	 	 <form method="post" th:object="${joinGame}" class="mt-5">
+	   	 		<div class="form-group">
+	   	 		
+	   	 		</div>
+	   	 		<button class="btn btn-primary" type="submit" th:text="#{common.button.joinGame}"></button>
+	   	 	</form>
+    	 </div>
+    	 
+   	 	<script>
+			function w3_open() {
+			  document.getElementById("mySidebar").style.width = "100%";
+			  document.getElementById("mySidebar").style.display = "block";
+			}
+			
+			function w3_close() {
+			  document.getElementById("mySidebar").style.display = "none";
+			}
+		</script>
+    </body>
+</html>
