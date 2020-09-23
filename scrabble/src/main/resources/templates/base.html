@@ -5,5 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title th:text="#{common.title}"></title>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<script language="javascript" type="text/javascript" src="/resources/js/scrabble.js"></script>
     </head>
+    
+	<!-- Headbar start -->
+	<div th:fragment="startHeadBar">
+		<div class="w3-sidebar w3-bar-block" style="display:none" id="mySidebar">
+			<button onclick="w3_close()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+			<a href="/setLanguage?lang=en" class="w3-bar-item w3-button" th:text="#{common.language.english}"></a>
+			<a href="/setLanguage?lang=de" class="w3-bar-item w3-button" th:text="#{common.language.german}"></a>
+		</div>
+		<div class="w3-teal">
+			<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()" th:text="#{common.symbols.currentFlag}"></button>
+			<div class="w3-container">
+				<a href="/start">
+					<h1 th:text="#{common.applicationName}"></h1>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Start new game button -->
+  	 <div th:fragment="startNewGameButton">
+ 	 	<form method="post" th:object="${newGame}" class="mt-5">
+ 	 		<div class="form-group">
+ 	 		
+ 	 		</div>
+ 	 		<button class="btn btn-primary" type="submit" th:text="#{common.button.newGame}" name = "startNewGame" value="startNewGame"></button>
+ 	 	</form>
+ 	 </div>
+ 	 
+ 	 <!-- Join game button -->
+   	 <div th:fragment="joinGameButton">
+   	 	 <form method="post" th:object="${joinGame}" class="mt-5">
+   	 		<div class="form-group">
+   	 		
+   	 		</div>
+   	 		<button class="btn btn-primary" type="submit" th:text="#{common.button.joinGame}" name = "joinExistGame" value="joinExistGame"></button>
+   	 	</form>
+   	 </div>
 </html>
